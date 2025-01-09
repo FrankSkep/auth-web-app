@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Registro</title>
+    <title>Register</title>
 </head>
 <body>
-<h1>Registro de Usuario</h1>
+<h1>User Registration</h1>
 <form action="#" th:action="@{/register}" th:object="${user}" method="post">
-    <label for="username">Nombre de usuario:</label>
+    <label for="username">Username:</label>
     <input type="text" id="username" th:field="*{username}" required />
+    <div th:if="${#fields.hasErrors('username')}" th:errors="*{username}"
+         class='invalid-feedback'>Username Error</div>
 
-    <label for="password">Contraseña:</label>
+    <label for="password">Password:</label>
     <input type="password" id="password" th:field="*{password}" required />
+    <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+         class='invalid-feedback'>Password Error</div>
 
-    <label for="confirmPassword">Confirmar contraseña:</label>
+    <label for="confirmPassword">Confirm Password:</label>
     <input type="password" id="confirmPassword" th:field="*{confirmPassword}" required />
+    <div th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}"
+         class='invalid-feedback'>Confirm Password Error</div>
 
-    <button type="submit">Registrarse</button>
+    <button type="submit">Register</button>
 </form>
 
-<span>¿Ya tienes una cuenta? <a th:href="@{/login}">Inicia sesión aquí</a></span>
+<span>Already have an account? <a th:href="@{/login}">Login here</a></span>
 
-<div th:if="${param.exito}">
+<div th:if="${param.success}">
     <div class="alert alert-info">
-        Se ha registrado exitosamente en la aplicación.
+        Successfully registered in the application.
     </div>
 </div>
-<div th:if="${msgError}" class="alert alert-danger">
-    <p th:text="${msgError}">Mensaje de error</p>
+<div th:if="${errorMsg}" class="alert alert-danger">
+    <p th:text="${errorMsg}">Error message</p>
 </div>
 
-<p th:if="${param.error}">Hubo un error en el registro</p>
-<p th:if="${param.success}">¡Registro exitoso! Ahora puedes iniciar sesión.</p>
+<p th:if="${param.error}">There was an error in the registration</p>
+<p th:if="${param.success}">Registration successful! You can now log in.</p>
 
 </body>
 </html>
