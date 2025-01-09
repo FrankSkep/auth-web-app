@@ -1,10 +1,10 @@
-package com.authapp.service;
+package com.auth.service;
 
-import com.authapp.dto.RegisterDTO;
-import com.authapp.entity.Role;
-import com.authapp.entity.User;
-import com.authapp.repository.RoleRepository;
-import com.authapp.repository.UserRepository;
+import com.auth.dto.RegisterDTO;
+import com.auth.entity.Role;
+import com.auth.entity.User;
+import com.auth.repository.RoleRepository;
+import com.auth.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

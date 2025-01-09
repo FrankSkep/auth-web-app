@@ -25,13 +25,13 @@
         auth-app-template
     </artifactId>
     <version>
-        0.0.1-SNAPSHOT
+        1.0
     </version>
     <name>
-        authapp-template
+        auth-webapp-template
     </name>
     <description>
-        authapp-template
+        authentication web application template
     </description>
     <url/>
     <licenses>

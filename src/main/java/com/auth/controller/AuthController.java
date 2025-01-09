@@ -1,7 +1,7 @@
-package com.authapp.controller;
+package com.auth.controller;
 
-import com.authapp.dto.RegisterDTO;
-import com.authapp.service.UserService;
+import com.auth.dto.RegisterDTO;
+import com.auth.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

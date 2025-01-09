@@ -1,4 +1,4 @@
-package com.authapp.controller;
+package com.auth.controller;
 
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.access.prepost.PreAuthorize;

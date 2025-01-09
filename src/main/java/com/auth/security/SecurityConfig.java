@@ -1,6 +1,6 @@
-package com.authapp.security;
+package com.auth.security;
 
-import com.authapp.service.CustomUserDetailsService;
+import com.auth.service.CustomUserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
