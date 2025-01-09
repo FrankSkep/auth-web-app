@@ -1,6 +1,6 @@
 package com.authapp.service;
 
-import com.authapp.dto.UserRegistrationDTO;
+import com.authapp.dto.RegisterDTO;
 import com.authapp.entity.Role;
 import com.authapp.entity.User;
 import com.authapp.repository.RoleRepository;
@@ -24,7 +24,7 @@ public class UserService {
     }
 
     @Transactional
-    public void registerUser(UserRegistrationDTO registrationDto) {
+    public void registerUser(RegisterDTO registrationDto) {
         if (!registrationDto.getPassword().equals(registrationDto.getConfirmPassword())) {
             throw new IllegalArgumentException("Passwords do not match");
         }
