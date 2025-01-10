@@ -2,15 +2,19 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Home</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="container">
 
 <p>Welcome, <span th:text="${username}">Usuario</span></p>
-<form th:action="@{/logout}"  method="post">
-    <button type="submit">Logout</button>
+<form th:action="@{/logout}" method="post">
+    <button type="submit" class="btn btn-primary">Logout</button>
 </form>
 
 <p></p>
 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

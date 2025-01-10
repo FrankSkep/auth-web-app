@@ -26,15 +26,9 @@ public class MainController {
         return "admin";
     }
 
-    @PreAuthorize("hasRole('USER')")
     @GetMapping("/user")
     public String userPage() {
         return "user";
-    }
-
-    @ExceptionHandler(AccessDeniedException.class)
-    public String handleAccessDeniedException() {
-        return "error";
     }
 }
 

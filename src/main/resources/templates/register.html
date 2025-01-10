@@ -2,26 +2,30 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Register</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="container">
 <h1>User Registration</h1>
 <form action="#" th:action="@{/register}" th:object="${user}" method="post">
-    <label for="username">Username:</label>
-    <input type="text" id="username" th:field="*{username}" required />
-    <div th:if="${#fields.hasErrors('username')}" th:errors="*{username}"
-         class='invalid-feedback'>Username Error</div>
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" th:field="*{username}" class="form-control" required />
+        <div th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="invalid-feedback">Username Error</div>
+    </div>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" th:field="*{password}" required />
-    <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
-         class='invalid-feedback'>Password Error</div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" th:field="*{password}" class="form-control" required />
+        <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="invalid-feedback">Password Error</div>
+    </div>
 
-    <label for="confirmPassword">Confirm Password:</label>
-    <input type="password" id="confirmPassword" th:field="*{confirmPassword}" required />
-    <div th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}"
-         class='invalid-feedback'>Confirm Password Error</div>
+    <div class="form-group">
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" th:field="*{confirmPassword}" class="form-control" required />
+        <div th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}" class="invalid-feedback">Confirm Password Error</div>
+    </div>
 
-    <button type="submit">Register</button>
+    <button type="submit" class="btn btn-primary">Register</button>
 </form>
 
 <span>Already have an account? <a th:href="@{/login}">Login here</a></span>
@@ -38,5 +42,8 @@
 <p th:if="${param.error}">There was an error in the registration</p>
 <p th:if="${param.success}">Registration successful! You can now log in.</p>
 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
